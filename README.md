@@ -10,7 +10,6 @@ TeamCollab is building a robust project management tool designed to enhance team
 ## Requirements
 - Django (4.2, 5.0)
 - Python (3.8, 3.9, 3.10, 3.11, 3.12)
-- PostgreSQL (optional, you can use SQLite for development)
 ## Installation
 ### 1. Clone the repository
 ```sh
