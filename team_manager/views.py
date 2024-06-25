@@ -1,15 +1,10 @@
-from django.shortcuts import render
 from django.contrib.auth import authenticate
-from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.decorators import action
-from rest_framework.response import Response
 from django.contrib.auth import authenticate
-from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.mixins import CreateModelMixin
 from rest_framework.pagination import PageNumberPagination
 from .models import(
@@ -29,10 +24,8 @@ from .serializers import(
 
 )
 
-# Create your views here.
 
 class UserRegisterViewSet(CreateModelMixin, GenericViewSet):
-    # queryset = User.objects.all()
     serializer_class = UserSerializer
 
 

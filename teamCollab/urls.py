@@ -1,19 +1,3 @@
-"""
-URL configuration for teamCollab project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include
 
@@ -26,16 +10,18 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+admin.site.site_header = "TeamCollab"
+admin.site.index_title = "Admin"
+admin.site.site_title = "TeamCollab"
 
 schema_view = get_schema_view(
    openapi.Info(
       title="TeamCollab API",
       default_version='v1',
       description="""
-        A company, TeamCollab, is building a project management tool that allows teams to
-        collaborate on projects. The tool needs an API to manage users, projects, tasks, and
-        comments. The API will be consumed by their front-end web application and mobile
-        application.
+        TeamCollab is building a robust project management tool designed to enhance team collaboration on various projects.
+        The API is a crucial component of this tool, providing seamless integration with the front-end web and mobile applications.
+        It offers comprehensive management capabilities for users, projects, tasks, and comments, enabling efficient and streamlined project workflows.
         """,
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="contact@snippets.local"),

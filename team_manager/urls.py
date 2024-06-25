@@ -1,9 +1,7 @@
-from django.urls import path
 from rest_framework import routers
 from rest_framework_nested import routers
-from rest_framework_simplejwt.views import TokenVerifyView
 from . import views
-from django.urls import reverse
+
 
 router = routers.DefaultRouter()
 
@@ -16,7 +14,7 @@ router.register('project-members', views.ProjectMemberViewSet)
 router.register('tasks', views.TaskViewSet)
 router.register('comments', views.CommentViewSet)
  
-
+# Nested router
 projects_router = routers.NestedDefaultRouter(router, 'projects', lookup='project')
 projects_router.register('tasks', views.TaskViewSet, basename='project-tasks')
 
